@@ -10,23 +10,17 @@ import { Component } from '@angular/core';
     }
     .blue{
       background: blue;
+      color: white;
     }
   `]
 })
 export class AppComponent {
   title = 'angular-udemy-assignment-3';
   displayContent = false;
-  count = 0
   clicks : number[] = []
 
   toggleDisplay() {
-    this.count++
-    this.clicks.push(this.count)
-    console.log(this.clicks)
-    if (this.displayContent){
-      this.displayContent = false
-    } else {
-      this.displayContent = true
-    }
+    this.clicks.push(this.clicks.length + 1)
+    this.displayContent = !this.displayContent
   }
 }
